@@ -1,56 +1,75 @@
 import random
 
-# Função de fitness
-def fitness(individuo):
-    return sum(individuo)
+class alimento:
+    def __init__(self, nome, proteina, carboidrato, energia, colesterol,lipidios, fibra, vit_c, ferro,calcio,sodio,magnesio,potassio,fosforo,zinco,peso,id):
+        self.nome = nome
+        self.proteina = proteina
+        self.carboidrato = carboidrato
+        self.energia = energia
+        self.colesterol = colesterol
+        self.lipidios = lipidios
+        self.fibra = fibra
+        self.vit_C = vit_c
+        self.ferro = ferro
+        self.calcio = calcio
+        self.sodio = sodio
+        self.magnesio = magnesio
+        self.potassio = potassio
+        self.fosforo = fosforo
+        self.zinco = zinco
+        self.peso = peso
+        self.id = id
+
+class refeicao:
+    def __init__(self,alimentos,proteina, carboidrato, energia, colesterol,lipidios, fibra, vit_c, ferro,calcio,sodio,magnesio,potassio,fosforo,zinco,peso):
+        self.alimentos = alimentos
+        self.proteina = proteina
+        self.carboidrato = carboidrato
+        self.energia = energia
+        self.colesterol = colesterol
+        self.lipidios = lipidios
+        self.fibra = fibra
+        self.vit_C = vit_c
+        self.ferro = ferro
+        self.calcio = calcio
+        self.sodio = sodio
+        self.magnesio = magnesio
+        self.potassio = potassio
+        self.fosforo = fosforo
+        self.zinco = zinco
+        self.peso = peso
 
 # Função para criar um novo indivíduo
-def criar_individuo(tamanho):
-    return [random.randint(0,  1) for _ in range(tamanho)]
+def criar_refeicao():
+    refeicao_array = []
+    
+    for i in range(0,10):
+        alimento_id = random.randint(0,10)
+        alimento_novo = [x for x in alimento if x.id == alimento.id]
+        proteina += alimento_novo.proteina  
+        carboidrato += alimento_novo.carboidrato
+        energia +=  alimento_novo.energio
+        colesterol += alimento_novo.colesterol
+        lipidios += alimento_novo.lipidios
+        fibra += alimento_novo.fibra  
+        vit_c += alimento_novo.vit_c  
+        ferro += alimento_novo.ferro
+        calcio += alimento_novo.calcio 
+        sodio += alimento_novo.sodio 
+        magnesio += alimento_novo.magnesio 
+        potassio += alimento_novo.potassio 
+        fosforo += alimento_novo.fosforo 
+        zinco += alimento_novo.zinco 
+        peso += alimento_novo.peso
+    
+    nova_refeicao = refeicao(alimentos,proteina, carboidrato, energia, colesterol,lipidios, fibra, vit_c, ferro,calcio,sodio,magnesio,potassio,fosforo,zinco,peso)
+    return refeicao
 
-# Função para cruzar dois indivíduos
-def cruzar(parente1, parente2):
-    pos = random.randint(0, len(parente1))
-    filho1 = parente1[:pos] + parente2[pos:]
-    filho2 = parente2[:pos] + parente1[pos:]
-    return filho1, filho2
+def criar_populacao():
+    array_refeicoes = []
+    for i in range(0,500):
+        array_refeicoes.append(criar_refeicao())
+    
+    return array_refeicoes
 
-# Função para mutar um indivíduo
-def mutate(individuo, chance_mutacao):
-    for i in range(len(individuo)):
-        if random.random() < chance_mutacao:
 
-            individuo[i] =  1 if individuo[i] ==  0 else  0
-    return individuo
-
-# Algoritmo genético
-def algoritmo_genetico(populacao_tamanho, individuo_tamanho, geracaos, chance_mutacao):
-    # Inicializa a população
-    populacao = [criar_individuo(individuo_tamanho) for _ in range(populacao_tamanho)]
-
-    for geracao in range(geracaos):
-        # Calcula a aptidão da população
-        fitnesses = [fitness(individuo) for individuo in populacao]
-
-        # Seleciona os pais para reprodução
-        parentes = random.choices(populacao, weights=fitnesses, k=2)
-
-        # Cria os filhos através de cruzar
-        filho1, filho2 = cruzar(*parentes)
-
-        # Muta os filhos
-        filho1 = mutate(filho1, chance_mutacao)
-        filho2 = mutate(filho2, chance_mutacao)
-
-        # Substitui um dos pais pela cópia do filho
-        populacao[random.randint(0, populacao_tamanho -  1)] = filho1
-        populacao[random.randint(0, populacao_tamanho -  1)] = filho2
-
-    # Retorna o melhor indivíduo da última geração
-    print(len(populacao))
-    return max(populacao, key=fitness)
-
-# Executa o algoritmo genético
-melhor_individuo = algoritmo_genetico(1000,  15,  1000,  0.0001)
-print("Melhor indivíduo encontrado: ", melhor_individuo)
-print("Fitness do melhor indivíduo: ", fitness(melhor_individuo))
