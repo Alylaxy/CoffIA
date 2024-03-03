@@ -46,20 +46,20 @@ def criar_refeicao():
     for i in range(0,10):
         alimento_id = random.randint(0,10)
         alimento_novo = [x for x in alimento if x.id == alimento.id]
-        proteina += alimento_novo.proteina  
-        carboidrato += alimento_novo.carboidrato
-        energia +=  alimento_novo.energio
+        proteina += alimento_novo[0].proteina
+        carboidrato += alimento_novo[0].carboidrato
+        energia +=  alimento_novo[0].energia
         colesterol += alimento_novo.colesterol
         lipidios += alimento_novo.lipidios
-        fibra += alimento_novo.fibra  
-        vit_c += alimento_novo.vit_c  
+        fibra += alimento_novo.fibra
+        vit_c += alimento_novo.vit_c
         ferro += alimento_novo.ferro
-        calcio += alimento_novo.calcio 
-        sodio += alimento_novo.sodio 
-        magnesio += alimento_novo.magnesio 
-        potassio += alimento_novo.potassio 
-        fosforo += alimento_novo.fosforo 
-        zinco += alimento_novo.zinco 
+        calcio += alimento_novo.calcio
+        sodio += alimento_novo.sodio
+        magnesio += alimento_novo.magnesio
+        potassio += alimento_novo.potassio
+        fosforo += alimento_novo.fosforo
+        zinco += alimento_novo.zinco
         peso += alimento_novo.peso
     
     nova_refeicao = refeicao(alimentos,proteina, carboidrato, energia, colesterol,lipidios, fibra, vit_c, ferro,calcio,sodio,magnesio,potassio,fosforo,zinco,peso)

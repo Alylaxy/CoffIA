@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+import sqlite3
+
 
 def extrair(url):
     # Enviar uma solicitação HTTP para obter o conteúdo da página
