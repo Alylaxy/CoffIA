@@ -27,7 +27,7 @@ def extrair(url):
         with open('soup_content.txt', 'r') as arquivo_entrada, open('links.txt', 'w') as arquivo_saida:
             # Lê todas as linhas do arquivo de entrada e as coloca em uma lista
             for resultado in resultados:
-                saida.write(resultado + '\n')
+                arquivo_saida.write(resultado + '\n')
 
             linhas = arquivo_entrada.readlines()
             
