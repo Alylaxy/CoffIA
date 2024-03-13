@@ -1,6 +1,7 @@
 import csv
 import requests
 from bs4 import BeautifulSoup
+
 import sqlite3
 
 
@@ -53,7 +54,7 @@ def extrair(url, linha):
         return caracteristicas
 
 def criar_csv(total):
-    with open('alimentos.csv', 'w', newline='', encoding='utf-8') as csvfile:
+    with open('alimentos_script.csv', 'w', newline='', encoding='utf-8') as csvfile:
         # Crie um objeto writer
         writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
         
