@@ -156,11 +156,6 @@ def main():
             parente1=seleção(populacao,death_count)
             parente2=seleção(populacao,death_count)
 
-            #ideia de crossover aqui
-            filho = crossover(parente1,parente2)
-            nova_população.append(filho)
-
-        populacao = np.array(nova_população)
 
 if __name__ == "__main__":
     main()
