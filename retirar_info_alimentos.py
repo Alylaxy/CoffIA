@@ -2,35 +2,6 @@ import csv
 import requests
 from bs4 import BeautifulSoup
 
-import sqlite3
-
-
-banco = sqlite3.connect('banco_de_limentos.db')
-cursor = banco.cursor()
-cursor.execute('PRAGMA encoding = "UTF-8"')
-cursor.execute('''CREATE TABLE alimentos (
-            nome TEXT,
-            id INTEGER,
-            Proteína TEXT,
-            Carboidrato TEXT,
-            Energia TEXT,
-            Ferro TEXT,
-            Cálcio TEXT,
-            Sódio TEXT,
-            Magnésio TEXT,
-            Manganês TEXT,
-            Fósforo TEXT,
-            Cobre TEXT,
-            Zinco TEXT,
-            Cinzas TEXT,
-            Retinol TEXT,
-            Tiamina TEXT,
-            Riboflavine TEXT,
-            Piroxidina TEXT,
-            Niacina TEXT,
-            RAE TEXT,
-            Umidade TEXT)''')
-
 def extrair(url, linha):
     # Enviar uma solicitação HTTP para obter o conteúdo da página
     response = requests.get(url)
