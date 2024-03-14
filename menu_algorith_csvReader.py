@@ -13,8 +13,8 @@ def get_line_from_csv(line_number):
     return line
 
 def gera_refeicao():
-    refeicao = [0]*6
-
+    refeicao = [0]*26
+    
     for i in range(random.randint(2, 6)):
         refeicao = [a+b for a,b in zip(get_line_from_csv(random.randint(2, 16)), refeicao)]
     return refeicao
