@@ -144,18 +144,36 @@ def lower_fitness(tester) -> int:
 def fitness_test(tester) -> int:
     return upper_fitness(tester) + lower_fitness(tester)
 
+def mutacao(populacao, frequencia, amplitude):
+    mutantes = []
+    for individuo in populacao:
+        if random.random() <= frequencia:
+            mutante = []
+            for val in individuo:
+                if random.random() <= frequencia:
+                    mutante.append(val * (1 + (((random.random() * 2) - 1) * amplitude)))
+                else:
+                    mutante.append(val)
+
+            mutantes.append(mutante) 
+        else:
+            mutantes.append(individuo)
+    return mutantes
+
 def main():
     N_população = int(input("Digite o numero de população:"))
     geração = int(input("Digite o numero de gerações:"))
+    frequencia = int(input("Digite a frequencia de mutaçao"))
     populacao = criar_populacao(N_população)
+    
     for _ in range(geração):
         nova_população =[]
         for _ in range(N_população):
             death_count =np.array([fitness_test(i) for i in populacao])
-            print(death_count)
             parente1=seleção(populacao,death_count)
             parente2=seleção(populacao,death_count)
-
+            
+        mutantes = mutacao(populacao, frequencia, 0.1)
 
 if __name__ == "__main__":
     main()
