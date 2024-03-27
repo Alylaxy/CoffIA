@@ -5,10 +5,10 @@ import csv
 def get_line_from_csv(line_number):
     with open("alimentos.csv", 'r') as file:
         line = list(csv.reader(file, delimiter=";"))[line_number - 1]
-        return [float(x.replace(',','.')) for x in line[2:len(line)-1]]
+        return [float(x.replace(',','.')) for x in line[2:len(line)-3]]
 
 def gera_refeicao():
-    return [sum(x) for x in zip(*[get_line_from_csv(random.randint(2, 16)) for _ in range(random.randint(2, 6))])]
+    return [sum(x) for x in zip(*[get_line_from_csv(random.randint(2, 581)) for _ in range(random.randint(2, 6))])]
 
 def criar_populacao(N):
     return [gera_refeicao() for _ in range(N)]
@@ -51,7 +51,6 @@ def upper_fitness(tester) -> int:
         1250,  # Phosphorus upper bound
         2,  # Copper upper bound
         11,  # Zinc upper bound
-        0,  # Ash (no upper bound)
         900,  # Retinol (Vitamin A) upper bound
         1.2,  # Thiamine (Vitamin B1) upper bound
         1.3,  # Riboflavin (Vitamin B2) upper bound
@@ -76,7 +75,6 @@ def upper_fitness(tester) -> int:
         1250,  # Phosphorus upper bound
         2,  # Copper upper bound
         9,  # Zinc upper bound
-        0,  # Ash (no upper bound)
         700,  # Retinol (Vitamin A) upper bound
         1.1,  # Thiamine (Vitamin B1) upper bound
         1.1,  # Riboflavin (Vitamin B2) upper bound
@@ -112,7 +110,6 @@ def lower_fitness(tester) -> int:
         700,  # Phosphorus lower bound
         0.9,  # Copper lower bound
         8,  # Zinc lower bound
-        0,  # Ash (no lower bound)
         600,  # Retinol (Vitamin A) lower bound
         0.8,  # Thiamine (Vitamin B1) lower bound
         0.8,  # Riboflavin (Vitamin B2) lower bound
@@ -137,7 +134,6 @@ def lower_fitness(tester) -> int:
         700,  # Phosphorus lower bound
         0.9,  # Copper lower bound
         8,  # Zinc lower bound
-        0,  # Ash (no lower bound)
         700,  # Retinol (Vitamin A) lower bound
         1.1,  # Thiamine (Vitamin B1) lower bound
         1.1,  # Riboflavin (Vitamin B2) lower bound
