@@ -5,7 +5,7 @@ import csv
 def get_line_from_csv(line_number):
     with open("alimentos.csv", 'r') as file:
         line = list(csv.reader(file, delimiter=";"))[line_number - 1]
-        return [float(x.replace(',','.')) for x in line[3:len(line)-3]]
+        return [float(x.replace(',','.')) for x in line[4:len(line)-3]]
 
 def melhor_individuo(populacao):
     # Calcula o fitness para cada indivíduo
@@ -46,7 +46,7 @@ def upper_fitness(tester) -> int:
         600,  # Calories upper bound
         30,  # Protein upper bound
         60,  # Carbohydrates upper bound
-        600,  # Energy (no upper bound)
+        7000,  # Energy (no upper bound)
         77,  # Cholesterol upper bound
         77,  # Lipids (Fats) upper bound
         25,  # Fiber upper bound
@@ -70,7 +70,7 @@ def upper_fitness(tester) -> int:
         600,  # Calories upper bound
         30,  # Protein upper bound
         60,  # Carbohydrates upper bound
-        600,  # Energy (no upper bound)
+        7000,  # Energy (no upper bound)
         77,  # Cholesterol upper bound
         77,  # Lipids (Fats) upper bound
         25,  # Fiber upper bound
@@ -105,7 +105,7 @@ def lower_fitness(tester) -> int:
         400,  # Calories lower bound
         20,  # Protein lower bound
         45,  # Carbohydrates lower bound
-        400,  # Energy (no lower bound)
+        300,  # Energy (no lower bound)
         44,  # Cholesterol lower bound
         44,  # Lipids (Fats) lower bound
         25,  # Fiber lower bound
@@ -129,7 +129,7 @@ def lower_fitness(tester) -> int:
         400,  # Calories lower bound
         20,  # Protein lower bound
         45,  # Carbohydrates lower bound
-        400,  # Energy (no lower bound)
+        300,  # Energy (no lower bound)
         44,  # Cholesterol lower bound
         44,  # Lipids (Fats) lower bound
         25,  # Fiber lower bound
