@@ -5,7 +5,7 @@ import csv
 def get_line_from_csv(line_number):
     with open("alimentos.csv", 'r') as file:
         line = list(csv.reader(file, delimiter=";"))[line_number - 1]
-        return [float(x.replace(',','.')) for x in line[2:len(line)-3]]
+        return [float(x.replace(',','.')) for x in line[3:len(line)-3]]
 
 def melhor_individuo(populacao):
     # Calcula o fitness para cada indivíduo
