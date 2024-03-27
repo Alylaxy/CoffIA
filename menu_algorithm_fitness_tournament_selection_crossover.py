@@ -15,7 +15,8 @@ def criar_populacao(N):
 
 def seleção(população, death_count, k=3):
     seleção = np.random.choice(len(população), k)
-    return população[np.argmin(death_count[seleção])]
+    selecionado = população[seleção[np.argmin(death_count[seleção])]]
+    return selecionado
 
 def crossover(parente1,parente2):
     filho1 = []
