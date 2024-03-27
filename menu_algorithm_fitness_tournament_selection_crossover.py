@@ -37,7 +37,7 @@ def upper_fitness(tester) -> int:
         600,  # Calories upper bound
         30,  # Protein upper bound
         60,  # Carbohydrates upper bound
-        0,  # Energy (no upper bound)
+        600,  # Energy (no upper bound)
         77,  # Cholesterol upper bound
         77,  # Lipids (Fats) upper bound
         25,  # Fiber upper bound
@@ -62,7 +62,7 @@ def upper_fitness(tester) -> int:
         600,  # Calories upper bound
         30,  # Protein upper bound
         60,  # Carbohydrates upper bound
-        0,  # Energy (no upper bound)
+        600,  # Energy (no upper bound)
         77,  # Cholesterol upper bound
         77,  # Lipids (Fats) upper bound
         25,  # Fiber upper bound
@@ -98,7 +98,7 @@ def lower_fitness(tester) -> int:
         400,  # Calories lower bound
         20,  # Protein lower bound
         45,  # Carbohydrates lower bound
-        0,  # Energy (no lower bound)
+        400,  # Energy (no lower bound)
         44,  # Cholesterol lower bound
         44,  # Lipids (Fats) lower bound
         25,  # Fiber lower bound
@@ -123,7 +123,7 @@ def lower_fitness(tester) -> int:
         400,  # Calories lower bound
         20,  # Protein lower bound
         45,  # Carbohydrates lower bound
-        0,  # Energy (no lower bound)
+        400,  # Energy (no lower bound)
         44,  # Cholesterol lower bound
         44,  # Lipids (Fats) lower bound
         25,  # Fiber lower bound
