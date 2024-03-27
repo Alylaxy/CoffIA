@@ -7,6 +7,14 @@ def get_line_from_csv(line_number):
         line = list(csv.reader(file, delimiter=";"))[line_number - 1]
         return [float(x.replace(',','.')) for x in line[2:len(line)-3]]
 
+def melhor_individuo(populacao):
+    # Calcula o fitness para cada indivíduo
+    fitness_values = [fitness_test(individuo) for individuo in populacao]
+    # Encontra o índice do melhor indivíduo
+    melhor_indice = np.argmin(fitness_values)
+    # Retorna o melhor indivíduo
+    return populacao[melhor_indice]
+
 def gera_refeicao():
     return [sum(x) for x in zip(*[get_line_from_csv(random.randint(2, 581)) for _ in range(random.randint(2, 6))])]
 
@@ -189,6 +197,10 @@ def main():
             nova_população.append(filho1)
             nova_população.append(filho2)
         populacao = mutacao(nova_população, frequencia, 0.1)
+
+    melhor = melhor_individuo(populacao)
+    print("Melhor Individuo:", melhor)
+    print("Numero de mortes do melhor individuo", fitness_test(melhor))
 
 if __name__ == "__main__":
     main()
