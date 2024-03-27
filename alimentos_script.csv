@@ -1,4 +1,4 @@
-nome;id;Proteína;Carboidrato;Energia;Colesterol;LipídeosFibra Alimentar;Vitamina C;Ferro;Cálcio;Sódio;Magnésio;Potássio;Manganês;Fósforo;Cobre;Zinco;Cinzas;Retinol;Tiamina;Riboflavina;Piridoxina;Niacina;RE;RAE;Umidade
+nome;id;Proteína;Carboidrato;Energia;Colesterol;Lipídeos;Fibra Alimentar;Vitamina C;Ferro;Cálcio;Sódio;Magnésio;Potássio;Manganês;Fósforo;Cobre;Zinco;Cinzas;Retinol;Tiamina;Riboflavina;Piridoxina;Niacina;RE;RAE;Umidade
 Carne, bovina, língua, cozida;0;100;21.40;0;315;105;24.80;0;0;2.10;6;59;12;175;0.01;136;0.08;4.10;0.70;0;0;0.08;0;1.83;0;0;53.4
 Carne, bovina, fígado, cru;1;100;20.70;1.10;141;393;5.40;0;0;5.60;4;76;12;265;0.26;334;9.01;3.50;1.50;7937;0.14;0.90;0;10.66;7937;7937;71.3
 Frango, sobrecoxa, com pele, crua;2;100;15.50;0;255.00;88;20.90;0;0;0.70;7.00;68;22;190;0.01;154;0.05;1.30;0.80;7.00;0.09;0.06;0;3.40;7.00;7.00;63.6
